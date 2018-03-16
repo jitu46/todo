@@ -1,0 +1,44 @@
+<p id="notice", style="font-size: 20px"><%= notice %></p>
+<br>
+<h2 class="todo_list_title"><%= @todo_list.title %></h2>
+<h3 class="todo_list_sub_title"><%= @todo_list.description %></h3>
+
+<div id="todo_items_wrapper">
+
+
+	<h3 style="font-size:2em; text-align: center">Not Completed</h3>
+
+
+	<table style="width: 100%">
+		<td>
+			<%= render @todo_list.todo_items.where(completed_at: nil) %> <%# not completed %>
+		</td>
+	</table>
+
+
+	<h3 style="font-size:2em; text-align: center">Completed</h3>
+
+
+	<table style="width: 100%" >
+		<td>
+			<%= render @todo_list.todo_items.where.not(completed_at: nil) %> <%# completed %>
+		</td>
+	</table>
+
+
+	<div id="form">
+		<%= render "todo_items/form" %>
+	</div>
+
+</div>
+
+
+<% if user_signed_in? %>
+
+	<div class="links">
+			<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+			<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: {confirm: "Are you Sure?"} %> |
+			<%= link_to 'Back', todo_lists_path %>
+	</div>
+
+<% end %>
