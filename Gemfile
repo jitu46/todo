@@ -63,3 +63,7 @@ gem 'whenever', require: false
 gem 'pry-nav'
 
 gem 'pry-rails'
+
+gem 'ransack', '~> 1.8', '>= 1.8.8' 
+
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'

@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<thead>
+			Notifications		
+		</thead>
+		<thead></thead>
+	</tr><br>
+	<% @notifications.each do |n| %>
+		<tr>
+			<td><%= n.notice %></td>
+			<td style="padding-left: 30px"><%= link_to " Delete", notification_path(n),  method: :delete %></td>
+		</tr>
+	<% end%>
+</table>
+
+<div class="links">
+	<%= link_to 'Refresh', notification_refresh_path, :method => 'PUT' %> |
+	<%= link_to 'Back', todo_lists_path %>
+</div>

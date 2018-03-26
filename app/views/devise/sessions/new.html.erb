@@ -1,4 +1,4 @@
-<div class="col-sm-4" style=" margin: 3em auto 0 auto;">  
+<div class="col-sm-4" style=" margin: 3em auto; float: none;">  
   <div class="panel panel-default devise-bs">
     <div class="panel-heading">
       <h4><%= t('.sign_in', default: 'Sign in') %></h4>
@@ -23,6 +23,7 @@
         <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
       <% end %>
     </div>
+    <%= render 'devise/shared/links' %>
   </div>
 </div>
-  <%= render 'devise/shared/links' %>
+  

@@ -4,14 +4,14 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-#
+set :environment, 'development'
 # set :output, "/path/to/my/cron_log.log"
 #
-# every 2.hours do
+ every 1.day do
 #   command "/usr/bin/some_great_command"
 #   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
+   rake "pick_winner"
+ end
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"

@@ -1,14 +1,30 @@
 <% if user_signed_in? %> 
-	<% @todo_lists.each do |todo_list| %>
+	<%= search_form_for @q do |f| %>
+		<div class="field">
+			<%= f.label :name_cont, "ToDo_List to Search" %>
+			<%= f.text_field :title_cont %>
+		</div>
+		<div class="actions"><%= f.submit "Search" %></div>
+	<% end %>
 
+
+	<% @todo_lists.each do |todo_list| %>
 	  <div class="index row clearfix">
-	    <br><h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
+	    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
 	    <p class="todo_list_sub_title"><%= todo_list.description %></p>
 	  </div>
 	<% end %>
 
+	<div class="apple_pagination">
+		<div class="page_info">
+			<%= page_entries_info @todo_lists %>
+		</div>
+		<%= will_paginate @todo_lists, :container => false %>
+	</div>
+
 <% else %>
 
-	<br><br><br><br><h2>Please Click on SignUp/SignIn to Create your own ToDo List</h2>
+	<br><h2>Please Click on SignUp/SignIn to Create your own ToDo List</h2>
 
 <% end %>
+
