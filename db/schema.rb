@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180329113642) do
+=======
+ActiveRecord::Schema.define(version: 20180327050249) do
+>>>>>>> c7002f219bfff5a2571b2ac0a482748f5bbcc54a
 
   create_table "notifications", force: :cascade do |t|
     t.string "notice"
@@ -42,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180329113642) do
     t.index ["user_id"], name: "index_todo_lists_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "todo_lists_users", id: false, force: :cascade do |t|
     t.integer "todo_list_id", null: false
     t.integer "user_id", null: false
@@ -49,6 +54,8 @@ ActiveRecord::Schema.define(version: 20180329113642) do
     t.index ["user_id"], name: "index_todo_lists_users_on_user_id"
   end
 
+=======
+>>>>>>> c7002f219bfff5a2571b2ac0a482748f5bbcc54a
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

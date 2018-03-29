@@ -16,7 +16,11 @@ class TodoListsController < ApplicationController
 
   def index
     if user_signed_in?
+<<<<<<< HEAD
       @q = current_user.todo_lists.paginate(page: params[:page], per_page: 3).ransack(params[:q])
+=======
+      @q = TodoList.where(user_id: current_user).paginate(page: params[:page], per_page: 3).ransack(params[:q])
+>>>>>>> c7002f219bfff5a2571b2ac0a482748f5bbcc54a
       @todo_lists = @q.result(distinct:true)
     end
   end

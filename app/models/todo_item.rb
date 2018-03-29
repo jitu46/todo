@@ -1,5 +1,7 @@
 class TodoItem < ApplicationRecord
+
   belongs_to :todo_list 
+
   has_many :notifications , dependent: :destroy 
 
   def completed?
