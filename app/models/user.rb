@@ -3,11 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
 
-<<<<<<< HEAD
   has_and_belongs_to_many :todo_lists, dependent: :destroy 
-=======
-  has_many :todo_lists, dependent: :destroy 
->>>>>>> c7002f219bfff5a2571b2ac0a482748f5bbcc54a
+
   has_many :notifications, dependent: :destroy
 
 
