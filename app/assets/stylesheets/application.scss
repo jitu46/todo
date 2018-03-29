@@ -1,0 +1,328 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ $white_opaque: rgba(250, 250, 250, .3);
+ $dark: #1F9727;
+
+* {
+	box-sizing: border-box;
+}
+html {
+  height: 100%;
+  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+}
+
+body {
+ 	height: auto;
+ 	min-height: 100%;
+  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  font-family: 'Lato', sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#notice {
+	text-align: center;
+	font-size: 0.6em;
+	color: $dark;
+	font-weight: 100;
+    color: blue;
+}
+
+.container {
+	width: 80%;
+	max-width: 750px;
+	background: $white_opaque;
+	margin: 3em auto 0 auto;
+	border-radius: 7px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	padding: 1em 0;
+}
+
+.todo_list_title {
+	text-align: center;
+	font-weight: 700;
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
+	a {
+		text-decoration: none;
+		color: white;
+		transition: all .4s ease-in-out;
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+}
+
+.todo_list_sub_title {
+	margin: 0 0 3em 0;
+	text-align: center;
+	font-size: 2em;
+	color: $dark;
+	font-weight: 100;
+}
+
+.index_row {
+	padding: 2em;
+	border-bottom: 1px solid rgba(250,250,250, .3);
+	.todo_list_sub_title {
+		margin-bottom: 0;
+	}
+}
+
+#todo_items_wrapper {
+	.row {
+		width: 100%;
+		border-top: 1px solid rgba(250,250,250, .3);
+		border-bottom: 1px solid rgba(250,250,250, .3);
+		margin : 0;
+		.complete {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-right: 1px solid rgba(250,250,280, .3);
+			padding: 1em 0;
+		}
+		.todo_item {
+			width: 15%;
+			float: left;
+			p {
+				margin: 0;
+				padding: 0;
+				color: $dark;
+				font-weight: 100;
+			}
+		}
+		.trash {
+			width: 20%;
+			float: left;
+			text-align: center;
+			border-left: 1px solid rgba(250,250,250, .3);
+			padding: 1em 0;
+		}
+		i {
+			color: white;
+			transition: all .4s ease-in-out;
+			&:hover {
+				color: $dark;
+			}
+		}
+	}
+	#form {
+		margin-top: 2em;
+		padding: 0 5%;
+		input[type="text"] {
+			width: 60%;
+			margin-right: 2%;
+			display: inline-block;
+			outline: none;
+			background: rgba(250,250,250,.4);
+			border: none;
+			height: 40px;
+			border-radius: 4px;
+			padding: 1em 2em;
+		}
+		input[type="submit"] {
+			background: rgba(250,250,250,.4);
+			outline: none;
+			border: none;
+			height: 40px;
+			border-radius: 4px;
+			width: 25%;
+			display: inline-block;
+			transition: all .4s ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background: $dark;
+			}
+		}
+		::-webkit-input-placeholder { color: $dark; }
+	}
+}
+
+.links {
+	display: block;
+	margin: 1.5em auto 0 auto;
+	text-align: center;
+	font-size: 0.8em;
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+.forms {
+	padding: 0 5%;
+}
+label {
+	color: $dark;
+}
+input[type="text"], textarea {
+	width: 100%;
+	margin: .5em 2% 1em 0;
+	display: inline-block;
+	outline: none;
+	background: rgba(250,250,250,.4);
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	padding: 1em 2em;
+}
+textarea {
+	height: 200px;
+}
+input[type="submit"] {
+	background: white;
+	outline: none;
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	width: 25%;
+	display: inline-block;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	color: $dark;
+	&:hover {
+		background: $dark;
+		color: white;
+	}
+}
+::-webkit-input-placeholder { color: $dark; }
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+
+.flickr_pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+    padding: 0.2em 0.5em; }
+  .flickr_pagination .disabled {
+    color: #aaaaaa; }
+  .flickr_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .flickr_pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 2px; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em; }
+  .flickr_pagination .next_page {
+    margin-left: 1em; }

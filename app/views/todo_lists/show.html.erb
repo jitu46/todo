@@ -1,0 +1,43 @@
+<p id="notice", style="font-size: 20px"><%= notice %></p>
+<h2 class="todo_list_title"><%= @todo_list.title %></h2>						<%# showing the Title %>
+<h3 class="todo_list_sub_title"><%= @todo_list.description %></h3>				<%# showing the Sub_Title %>
+
+<div id="todo_items_wrapper">													<%# Collect all the Todo_Items on show page. %>
+
+
+	<h3 style="font-size:1.5em; text-align: center">Not Completed</h3>
+
+
+	<table style="width: 100%">
+		<td>
+			<%= render @todo_list.todo_items.where(completed_at: nil) %> 		<%# Showing not completed Todo_Items %>
+		</td>
+	</table>
+
+
+	<h3 style="font-size:1.5em; text-align: center">Completed</h3>
+
+
+	<table style="width: 100%" >
+		<td>
+			<%= render @todo_list.todo_items.where.not(completed_at: nil) %> 	<%# Showing completed Todo_Items %>
+		</td>
+	</table>
+
+
+	<div id="form">
+		<%= render "todo_items/form" %>											<%# Rendering all Todo_Items referring to the Todo_list%>
+	</div>
+
+</div>
+
+
+<% if user_signed_in? %>														<%# Showing the Various links only when user Signed_in %>
+
+	<div class="links">
+			<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+			<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: {confirm: "Are you Sure?"} %> |
+			<%= link_to 'Back', todo_lists_path %>
+	</div>
+
+<% end %>
