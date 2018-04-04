@@ -11,28 +11,28 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <style>
-    
-    body, html {
-        height: 100%;
-        font-family: "Inconsolata", sans-serif;
-    }
-    .bgimg {
-        background-position: center;
-        background-size: cover;
-        background-image: url("/w3images/coffeehouse.jpg");
-        min-height: 75%;
-    }
-    .menu {
-        display: none;
-    }
+
+      body, html {
+          height: 100%;
+          font-family: "Inconsolata", sans-serif;
+      }
+      .bgimg {
+          background-position: center;
+          background-size: cover;
+          background-image: url("/w3images/coffeehouse.jpg");
+          min-height: 75%;
+      }
+      .menu {
+          display: none;
+      }
+
     </style>
 
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   
   </head>
 
@@ -44,7 +44,7 @@
         <div class="w3-col s2">
           <%= link_to "Home ", root_path, class: "w3-button w3-black" %>
         </div>
-        <%#binding.pry %>
+        
         <% if user_signed_in? %>
           <div class="w3-col s2">
             <%= link_to " New Todo List", new_todo_list_path, class: "w3-button w3-black" %>

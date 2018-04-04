@@ -1,35 +1,47 @@
 <div class="row clearfix">
-	<div class="col-md-12">		
-		<% if todo_item.completed? %>								<%# Showing the Todo_items Various properties in show page(Completed) %>
-			<div class="complete">
-				<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
-					<i style="opacity: 0;" class="fa fa-check"></i>
-				<% end %>
-			</div>
+	<div class="col-md-12">
 
-			<div class="todo_item">
-				<p style="opacity: 1;"><%= todo_item.id %></p>
-			</div>
+					<%# Showing the Todo_items Various properties in show page(Completed) %>
 
-			<div class="todo_item">
-				<p style="opacity: 1;"><%= todo_item.content %></p>
-			</div>
+		<% if todo_item.completed? %>
 
-			<div class="todo_item">
-				<p style="opacity: 1;"><%= todo_item.end %></p>
-			</div>
+			<table>
+				<tr>
+					<div class="complete">
+						<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+							<i style="opacity: 0;" class="fa fa-check"></i>
+						<% end %>
+					</div>
 
-			<div class="todo_item">
-				<p style="opacity: 1;"><%= todo_item.updated_at.strftime("%Y-%m-%d") %></p>
-			</div>
+					<div class="todo_item">
+						<p style="opacity: 1;"><%= todo_item.id %></p>
+					</div>
 
-			<div class="trash">
-				<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you Sure?"} do %>
-					<i class="fa fa-trash"></i>
-				<% end %>
-			</div>
+					<div class="todo_item">
+						<p style="opacity: 0.4;"><strike><%= todo_item.content %></strike></p>
+					</div>
+
+					<div class="todo_item">
+						<p style="opacity: 0.4;"><strike><%= todo_item.end %></strike></p>
+					</div>
+
+					<div class="todo_item">
+						<p style="opacity: 0.4;"><strike><%= todo_item.updated_at.strftime("%Y-%m-%d") %></strike></p>
+					</div>
+
+					<div class="trash">
+						<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you Sure?"} do %>
+							<i class="fa fa-trash"></i>
+						<% end %>
+					</div>
+				</tr>
+			</table>
+
 		<% else %>
-			<table>													<%# Showing the Todo_items Various properties in show page(Uncompleted) %>
+
+					<%# Showing the Todo_items Various properties in show page(Uncompleted) %>
+
+			<table>										
 				<tr>
 					<div class="complete">
 						<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
@@ -42,7 +54,7 @@
 					</div>
 
 					<div class="todo_item">
-						<p><%= todo_item.content %></p>
+						<p style="opacity: 1;"><%= todo_item.content %></p>
 					</div>
 
 					<div class="todo_item">
@@ -66,6 +78,10 @@
 					</div>	
 				</tr>
 			</table>
+
+
 		<% end %>
+
+
 	</div>
 </div>

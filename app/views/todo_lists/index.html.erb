@@ -1,4 +1,7 @@
 <% if user_signed_in? %> 
+
+			<#>
+
 	<%= search_form_for @q do |f| %>
 		<div class="field">
 			<%= f.label :name_cont, "ToDo_List to Search" %>
@@ -15,6 +18,7 @@
 	  </div>
 	<% end %>
 
+
 	<div class="apple_pagination">
 		<div class="page_info">
 			<%= page_entries_info @todo_lists %>
@@ -22,9 +26,12 @@
 		<%= will_paginate @todo_lists, :container => false %>
 	</div>
 
+
 <% else %>
 
+
 	<br><h2>Please Click on SignUp/SignIn to Create your own ToDo List</h2>
+
 
 <% end %>
 

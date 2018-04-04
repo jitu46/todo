@@ -15,8 +15,8 @@
  */
 
 
- $white_opaque: rgba(250, 250, 250, .3);
- $dark: #1F9727;
+ $white_opaque: rgba(250, 250, 250, .4);
+ $dark: #392C2C;
 
 * {
 	box-sizing: border-box;
@@ -72,8 +72,8 @@ body {
 
 .todo_list_title {
 	text-align: center;
-	font-weight: 700;
-	font-size: 2rem;
+	font-weight: 70;
+	font-size: 2em;
 	text-transform: uppercase;
 	color: white;
 	margin: 0;
@@ -82,7 +82,7 @@ body {
 		color: white;
 		transition: all .4s ease-in-out;
 		&:hover {
-			opacity: 0.4;
+			opacity: 0.6;
 		}
 	}
 }
@@ -92,7 +92,7 @@ body {
 	text-align: center;
 	font-size: 2em;
 	color: $dark;
-	font-weight: 100;
+	font-weight: 90;
 }
 
 .index_row {
@@ -117,13 +117,14 @@ body {
 			padding: 1em 0;
 		}
 		.todo_item {
+			font-size: 14px;
 			width: 15%;
 			float: left;
 			p {
 				margin: 0;
 				padding: 0;
 				color: $dark;
-				font-weight: 100;
+				font-weight: 70;
 			}
 		}
 		.trash {
@@ -168,6 +169,17 @@ body {
 			&:hover {
 				background: $dark;
 			}
+		}
+		select{
+		    width:auto;
+			margin-right: 1%;
+			display: inline-block;
+			outline: none;
+			background: rgba(250,250,250,.4);
+			border: none;
+			height: 40px;
+			border-radius: 4px;
+			padding: 1em .5em;
 		}
 		::-webkit-input-placeholder { color: $dark; }
 	}

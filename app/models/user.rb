@@ -37,6 +37,13 @@ class User < ApplicationRecord
   validates_format_of :password, with: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$&*]).{8,}$/, :multiline => true, on: :create
 
 
+  #def self.search(search)
+  #  if search
+  #    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  #  else
+  #    find(:all)
+  #  end
+  #end
     
   def validate_username
     if User.where(email: username).exists?
